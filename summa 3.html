@@ -1,46 +1,361 @@
-<html>
-
+<!DOCTYPE html>
 <head>
-
-<title>
-
-Script
-
-</title>
-
+    <title>DES Tables - Cryptography</title>
+</head>
 <script>
+    function initialpermutaion(){
+        var x = document.getElementById("binary").value;
+        var arr = x.split(" ");
+        var iniper = [arr[57],arr[49],arr[41],arr[33],arr[25],arr[17],arr[9],arr[1],
+                      arr[59],arr[51],arr[43],arr[35],arr[27],arr[19],arr[11],arr[3],
+                      arr[61],arr[53],arr[45],arr[37],arr[29],arr[21],arr[13],arr[5],
+                      arr[63],arr[55],arr[47],arr[39],arr[31],arr[23],arr[15],arr[7],
+                      arr[56],arr[48],arr[40],arr[32],arr[24],arr[16],arr[8],arr[0],
+                      arr[58],arr[50],arr[42],arr[34],arr[26],arr[18],arr[10],arr[2],
+                      arr[60],arr[52],arr[44],arr[36],arr[28],arr[20],arr[12],arr[4],
+                      arr[62],arr[54],arr[46],arr[38],arr[30],arr[22],arr[14],arr[6] ];
+        document.getElementById("dis").innerHTML = "Initial Permutation"+" <br>"+
+                                                   iniper[0]+" "+iniper[1]+" "+iniper[2]+" "+iniper[3]+" "+iniper[4]+" "+iniper[5]+" "+iniper[6]+" "+iniper[7]+" <br>"+
+                                                   iniper[8]+" "+iniper[9]+" "+iniper[10]+" "+iniper[11]+" "+iniper[12]+" "+iniper[13]+" "+iniper[14]+" "+iniper[15]+" <br>"+
+                                                   iniper[16]+" "+iniper[17]+" "+iniper[18]+" "+iniper[19]+" "+iniper[20]+" "+iniper[21]+" "+iniper[22]+" "+iniper[23]+" <br>"+
+                                                   iniper[24]+" "+iniper[25]+" "+iniper[26]+" "+iniper[27]+" "+iniper[28]+" "+iniper[29]+" "+iniper[30]+" "+iniper[31]+" <br>"+
+                                                   iniper[32]+" "+iniper[33]+" "+iniper[34]+" "+iniper[35]+" "+iniper[36]+" "+iniper[37]+" "+iniper[38]+" "+iniper[39]+" <br>"+
+                                                   iniper[40]+" "+iniper[41]+" "+iniper[42]+" "+iniper[43]+" "+iniper[44]+" "+iniper[45]+" "+iniper[46]+" "+iniper[47]+" <br>"+
+                                                   iniper[48]+" "+iniper[49]+" "+iniper[50]+" "+iniper[51]+" "+iniper[52]+" "+iniper[53]+" "+iniper[54]+" "+iniper[55]+" <br>"+
+                                                   iniper[56]+" "+iniper[57]+" "+iniper[58]+" "+iniper[59]+" "+iniper[60]+" "+iniper[61]+" "+iniper[62]+" "+iniper[63]+" <br>";
+    }
+    function inversepermutation(){
+        var x = document.getElementById("binary").value;
+        var arr = x.split(" ");
+        var invper = [arr[39],arr[7],arr[47],arr[15],arr[55],arr[23],arr[63],arr[31],
+                      arr[38],arr[6],arr[46],arr[14],arr[54],arr[22],arr[62],arr[30],
+                      arr[37],arr[5],arr[45],arr[13],arr[53],arr[21],arr[61],arr[29],
+                      arr[36],arr[4],arr[44],arr[12],arr[52],arr[20],arr[60],arr[28],
+                      arr[35],arr[3],arr[43],arr[11],arr[51],arr[19],arr[59],arr[27],
+                      arr[34],arr[2],arr[42],arr[10],arr[50],arr[18],arr[58],arr[26],
+                      arr[33],arr[1],arr[41],arr[9],arr[49],arr[17],arr[57],arr[25],
+                      arr[32],arr[0],arr[40],arr[8],arr[48],arr[16],arr[56],arr[24] ];
+        document.getElementById("dis").innerHTML = "Inverse Permutation"+" <br>"+
+                                                   invper[0]+" "+invper[1]+" "+invper[2]+" "+invper[3]+" "+invper[4]+" "+invper[5]+" "+invper[6]+" "+invper[7]+" <br>"+
+                                                   invper[8]+" "+invper[9]+" "+invper[10]+" "+invper[11]+" "+invper[12]+" "+invper[13]+" "+invper[14]+" "+invper[15]+" <br>"+
+                                                   invper[16]+" "+invper[17]+" "+invper[18]+" "+invper[19]+" "+invper[20]+" "+invper[21]+" "+invper[22]+" "+invper[23]+" <br>"+
+                                                   invper[24]+" "+invper[25]+" "+invper[26]+" "+invper[27]+" "+invper[28]+" "+invper[29]+" "+invper[30]+" "+invper[31]+" <br>"+
+                                                   invper[32]+" "+invper[33]+" "+invper[34]+" "+invper[35]+" "+invper[36]+" "+invper[37]+" "+invper[38]+" "+invper[39]+" <br>"+
+                                                   invper[40]+" "+invper[41]+" "+invper[42]+" "+invper[43]+" "+invper[44]+" "+invper[45]+" "+invper[46]+" "+invper[47]+" <br>"+
+                                                   invper[48]+" "+invper[49]+" "+invper[50]+" "+invper[51]+" "+invper[52]+" "+invper[53]+" "+invper[54]+" "+invper[55]+" <br>"+
+                                                   invper[56]+" "+invper[57]+" "+invper[58]+" "+invper[59]+" "+invper[60]+" "+invper[61]+" "+invper[62]+" "+invper[63]+" <br>";
+    }
+    function expansionpermutation(){
+        var x = document.getElementById("binary").value;
+        var arr = x.split(" ");
+        var exper = [arr[31],arr[0],arr[1],arr[2],arr[3],arr[4],
+                    arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],
+                    arr[7],arr[8],arr[9],arr[10],arr[11],arr[12],
+                    arr[11],arr[12],arr[13],arr[14],arr[15],arr[16],
+                    arr[15],arr[16],arr[17],arr[18],arr[19],arr[20],
+                    arr[19],arr[20],arr[21],arr[22],arr[23],arr[24],
+                    arr[23],arr[24],arr[25],arr[26],arr[27],arr[28],
+                    arr[27],arr[28],arr[29],arr[30],arr[31],arr[0]];
+        document.getElementById("dis").innerHTML ="Expansion Permutation"+" <br>"+
+                                                exper[0]+" "+exper[1]+" "+exper[2]+" "+exper[3]+" "+exper[4]+" "+exper[5]+" <br>"+
+                                                exper[6]+" "+exper[7]+" "+exper[8]+" "+exper[9]+" "+exper[10]+" "+exper[11]+" <br>"+
+                                                exper[12]+" "+exper[13]+" "+exper[14]+" "+exper[15]+" "+exper[16]+" "+exper[17]+" <br>"+
+                                                exper[18]+" "+exper[19]+" "+exper[20]+" "+exper[21]+" "+exper[22]+" "+exper[23]+" <br>"+
+                                                exper[24]+" "+exper[25]+" "+exper[26]+" "+exper[27]+" "+exper[28]+" "+exper[29]+" <br>"+
+                                                exper[30]+" "+exper[31]+" "+exper[32]+" "+exper[33]+" "+exper[34]+" "+exper[35]+" <br>"+
+                                                exper[36]+" "+exper[37]+" "+exper[38]+" "+exper[39]+" "+exper[40]+" "+exper[41]+" <br>"+
+                                                exper[42]+" "+exper[43]+" "+exper[44]+" "+exper[45]+" "+exper[46]+" "+exper[47]+" <br>";
 
-function doTheJob()
+    
+    }
+    function permutationfunction(){
+        var x = document.getElementById("binary").value;
+        var arr = x.split(" ");
+        var per = [arr[15],arr[6],arr[19],arr[20],arr[28],arr[11],arr[27],arr[16],
+                  arr[0],arr[14],arr[22],arr[25],arr[4],arr[17],arr[30],arr[9],
+                  arr[1],arr[7],arr[23],arr[13],arr[31],arr[26],arr[2],arr[8],
+                  arr[18],arr[12],arr[29],arr[5],arr[21],arr[10],arr[3],arr[24]];
+        document.getElementById("dis").innerHTML = "Permutation Function"+" <br>"+
+                                                   per[0]+" "+per[1]+" "+per[2]+" "+per[3]+" "+per[4]+" "+per[5]+" "+per[6]+" "+per[7]+" <br>"+
+                                                   per[8]+" "+per[9]+" "+per[10]+" "+per[11]+" "+per[12]+" "+per[13]+" "+per[14]+" "+per[15]+" <br>"+
+                                                   per[16]+" "+per[17]+" "+per[18]+" "+per[19]+" "+per[20]+" "+per[21]+" "+per[22]+" "+per[23]+" <br>"+
+                                                   per[24]+" "+per[25]+" "+per[26]+" "+per[27]+" "+per[28]+" "+per[29]+" "+per[30]+" "+per[31]+" <br>";
 
-{
+    }
+    function permutedchoiceone(){
+        var x = document.getElementById("binary").value;
+        var arr = x.split(" ");
+        var pc1 = [arr[56],arr[48],arr[40],arr[32],arr[24],arr[16],arr[8],
+                    arr[0],arr[57],arr[49],arr[41],arr[33],arr[25],arr[17],
+                    arr[9],arr[1],arr[58],arr[50],arr[42],arr[34],arr[26],
+                    arr[18],arr[10],arr[2],arr[59],arr[51],arr[43],arr[35],
+                    arr[62],arr[54],arr[46],arr[38],arr[30],arr[22],arr[14],
+                    arr[6],arr[61],arr[53],arr[45],arr[37],arr[29],arr[21],
+                    arr[13],arr[5],arr[60],arr[52],arr[44],arr[36],arr[28],
+                    arr[20],arr[12],arr[4],arr[27],arr[19],arr[11],arr[3]];
+        document.getElementById("dis").innerHTML = "Permuted Choice One"+" <br>"+
+                                                   pc1[0]+" "+pc1[1]+" "+pc1[2]+" "+pc1[3]+" "+pc1[4]+" "+pc1[5]+" "+pc1[6]+" <br>"+
+                                                   pc1[7]+" "+pc1[8]+" "+pc1[9]+" "+pc1[10]+" "+pc1[11]+" "+pc1[12]+" "+pc1[13]+" <br>"+
+                                                   pc1[14]+" "+pc1[15]+" "+pc1[16]+" "+pc1[17]+" "+pc1[18]+" "+pc1[19]+" "+pc1[20]+" <br>"+
+                                                   pc1[21]+" "+pc1[22]+" "+pc1[23]+" "+pc1[24]+" "+pc1[25]+" "+pc1[26]+" "+pc1[27]+" <br>"+
+                                                   pc1[28]+" "+pc1[29]+" "+pc1[30]+" "+pc1[31]+" "+pc1[32]+" "+pc1[33]+" "+pc1[34]+" <br>"+
+                                                   pc1[35]+" "+pc1[36]+" "+pc1[37]+" "+pc1[38]+" "+pc1[39]+" "+pc1[40]+" "+pc1[41]+" <br>"+
+                                                   pc1[42]+" "+pc1[43]+" "+pc1[44]+" "+pc1[45]+" "+pc1[46]+" "+pc1[47]+" "+pc1[48]+" <br>"+
+                                                   pc1[49]+" "+pc1[50]+" "+pc1[51]+" "+pc1[52]+" "+pc1[53]+" "+pc1[54]+" "+pc1[55]+" <br>";
+    
+    }
+    function permutedchoicetwo(){
+        var x = document.getElementById("binary").value;
+        var arr = x.split(" ");
+        var pc2 = [arr[13],arr[16],arr[10],arr[23],arr[0],arr[4],arr[2],arr[27],
+                    arr[14],arr[5],arr[20],arr[9],arr[22],arr[18],arr[11],arr[3],
+                    arr[25],arr[7],arr[15],arr[6],arr[26],arr[19],arr[12],arr[1],
+                    arr[40],arr[51],arr[30],arr[36],arr[46],arr[54],arr[29],arr[39],
+                    arr[50],arr[44],arr[32],arr[47],arr[43],arr[48],arr[38],arr[55],
+                    arr[33],arr[52],arr[45],arr[41],arr[49],arr[35],arr[28],arr[31]];
+        document.getElementById("dis").innerHTML = "Permuted Choice Two"+" <br>"+
+                                                   pc2[0]+" "+pc2[1]+" "+pc2[2]+" "+pc2[3]+" "+pc2[4]+" "+pc2[5]+" "+pc2[6]+" "+pc2[7]+" <br>"+
+                                                   pc2[8]+" "+pc2[9]+" "+pc2[10]+" "+pc2[11]+" "+pc2[12]+" "+pc2[13]+" "+pc2[14]+" "+pc2[15]+" <br>"+
+                                                   pc2[16]+" "+pc2[17]+" "+pc2[18]+" "+pc2[19]+" "+pc2[20]+" "+pc2[21]+" "+pc2[22]+" "+pc2[23]+" <br>"+
+                                                   pc2[24]+" "+pc2[25]+" "+pc2[26]+" "+pc2[27]+" "+pc2[28]+" "+pc2[29]+" "+pc2[30]+" "+pc2[31]+" <br>"+
+                                                   pc2[32]+" "+pc2[33]+" "+pc2[34]+" "+pc2[35]+" "+pc2[36]+" "+pc2[37]+" "+pc2[38]+" "+pc2[39]+" <br>"+
+                                                   pc2[40]+" "+pc2[41]+" "+pc2[42]+" "+pc2[43]+" "+pc2[44]+" "+pc2[45]+" "+pc2[46]+" "+pc2[47]+" <br><br>"+
+                                                   "Use this if you need 6 bits in each row"+"<br>"+
+                                                    pc2[0]+" "+pc2[1]+" "+pc2[2]+" "+pc2[3]+" "+pc2[4]+" "+pc2[5]+" <br>"+
+                                                    pc2[6]+" "+pc2[7]+" "+pc2[8]+" "+pc2[9]+" "+pc2[10]+" "+pc2[11]+" <br>"+
+                                                    pc2[12]+" "+pc2[13]+" "+pc2[14]+" "+pc2[15]+" "+pc2[16]+" "+pc2[17]+" <br>"+
+                                                    pc2[18]+" "+pc2[19]+" "+pc2[20]+" "+pc2[21]+" "+pc2[22]+" "+pc2[23]+" <br>"+
+                                                    pc2[24]+" "+pc2[25]+" "+pc2[26]+" "+pc2[27]+" "+pc2[28]+" "+pc2[29]+" <br>"+
+                                                    pc2[30]+" "+pc2[31]+" "+pc2[32]+" "+pc2[33]+" "+pc2[34]+" "+pc2[35]+" <br>"+
+                                                    pc2[36]+" "+pc2[37]+" "+pc2[38]+" "+pc2[39]+" "+pc2[40]+" "+pc2[41]+" <br>"+
+                                                    pc2[42]+" "+pc2[43]+" "+pc2[44]+" "+pc2[45]+" "+pc2[46]+" "+pc2[47]+" <br>";
 
-  sum = 0;
+    }
+    function sbox(){
+        var s1 = document.getElementById("s1").value;
+        var s2 = document.getElementById("s2").value;
+        var s3 = document.getElementById("s3").value;
+        var s4 = document.getElementById("s4").value;
+        var s5 = document.getElementById("s5").value;
+        var s6 = document.getElementById("s6").value;
+        var s7 = document.getElementById("s7").value;
+        var s8 = document.getElementById("s8").value;
+        var sbox1 = [[14,4,13,1,2,15,11,8,3,10,6,12,5,9,0,7],
+                    [0,15,7,4,14,2,13,1,10,6,12,11,9,5,3,8],
+                    [4,1,14,8,13,6,2,11,15,12,9,7,3,10,5,0],
+                    [15,12,8,2,4,9,1,7,5,11,3,14,10,0,6,13]];
+        var sbox2 = [[15,1,8,14,6,11,3,4,9,7,2,13,12,0,5,10],
+                    [3,13,4,7,15,2,8,14,12,0,1,10,6,9,11,5],
+                    [0,14,7,11,10,4,13,1,5,8,12,6,9,3,2,15],
+                    [13,8,10,1,3,15,4,2,11,6,7,12,0,5,14,9]];
+        var sbox3 = [[10,0,9,14,6,3,15,5,1,13,12,7,11,4,2,8],
+                    [13,7,0,9,3,4,6,10,2,8,5,14,12,11,15,1],
+                    [13,6,4,9,8,15,3,0,11,1,2,12,5,10,14,7],
+                    [1,10,13,0,6,9,8,7,4,15,14,3,11,5,2,12]];
+        var sbox4 = [[7,13,14,3,0,6,9,10,1,2,8,5,11,12,4,15],
+                    [13,8,11,5,6,15,0,3,4,7,2,12,1,10,14,9],
+                    [10,6,9,0,12,11,7,13,15,1,3,14,5,2,8,4],
+                    [3,15,0,6,10,1,13,8,9,4,5,11,12,7,2,14]];
+        var sbox5 = [[2,12,4,1,7,10,11,6,8,5,3,15,13,0,14,9],
+                    [14,11,2,12,4,7,13,1,5,0,15,10,3,9,8,6],
+                    [4,2,1,11,10,13,7,8,15,9,12,5,6,3,0,14],
+                    [11,8,12,7,1,14,2,13,6,15,0,9,10,4,5,3]];
+        var sbox6 = [[12,1,10,15,9,2,6,8,0,13,3,4,14,7,5,11],
+                    [10,15,4,2,7,12,9,5,6,1,13,14,0,11,3,8],
+                    [9,14,15,5,2,8,12,3,7,0,4,10,1,13,11,6],
+                    [4,3,2,12,9,5,15,10,11,14,1,7,6,0,8,13]];
+        var sbox7 = [[4,11,2,14,15,0,8,13,3,12,9,7,5,10,6,1],
+                    [13,0,11,7,4,9,1,10,14,3,5,12,2,15,8,6],
+                    [1,4,11,13,12,3,7,14,10,15,6,8,0,5,9,2],
+                    [6,11,13,8,1,4,10,7,9,5,0,15,14,2,3,12]];
+        var sbox8 = [[13,2,8,4,6,15,11,1,10,9,3,14,5,0,12,7],
+                    [1,15,13,8,10,3,7,4,12,5,6,11,0,14,9,2],
+                    [7,11,4,1,9,12,14,2,0,6,10,13,15,3,5,8],
+                    [2,1,14,7,4,10,8,13,15,12,9,0,3,5,6,11]];
+        var sb1 = s1.split(" "), sb2 = s2.split(" "), sb3 = s3.split(" "), sb4 = s4.split(" "), sb5 = s5.split(" "), sb6 = s6.split(" "),
+         sb7 = s7.split(" "), sb8 = s8.split(" ");
+        var x1=parseInt(sb1[0]+sb1[5], 2), x2=parseInt(sb1[1]+sb1[2]+sb1[3]+sb1[4], 2);
+        var x3=parseInt(sb2[0]+sb2[5], 2), x4=parseInt(sb2[1]+sb2[2]+sb2[3]+sb2[4], 2);
+        var x5=parseInt(sb3[0]+sb3[5], 2), x6=parseInt(sb3[1]+sb3[2]+sb3[3]+sb3[4], 2);
+        var x7=parseInt(sb4[0]+sb4[5], 2), x8=parseInt(sb4[1]+sb4[2]+sb4[3]+sb4[4], 2);
+        var x9=parseInt(sb5[0]+sb5[5], 2), x10=parseInt(sb5[1]+sb5[2]+sb5[3]+sb5[4], 2);
+        var x11=parseInt(sb6[0]+sb6[5], 2), x12=parseInt(sb6[1]+sb6[2]+sb6[3]+sb6[4], 2);
+        var x13=parseInt(sb7[0]+sb7[5], 2), x14=parseInt(sb7[1]+sb7[2]+sb7[3]+sb7[4], 2);
+        var x15=parseInt(sb8[0]+sb8[5], 2), x16=parseInt(sb8[1]+sb8[2]+sb8[3]+sb8[4], 2);
+        document.getElementById("dis1").innerHTML = "Add zeroes in front of each row to make 4 bits"+"<br>"+
+                                                    sbox1[x1][x2].toString(2)+"<br>"+
+                                                    sbox2[x3][x4].toString(2)+"<br>"+
+                                                    sbox3[x5][x6].toString(2)+"<br>"+
+                                                    sbox4[x7][x8].toString(2)+"<br>"+
+                                                    sbox5[x9][x10].toString(2)+"<br>"+
+                                                    sbox6[x11][x12].toString(2)+"<br>"+
+                                                    sbox7[x13][x14].toString(2)+"<br>"+
+                                                    sbox8[x15][x16].toString(2)+"<br>";
 
-  for(a=1; a<15;a++)
-
-  {
-
-     if( a % 2 !=0)
-
-     {
-
-         sum += a;
-
-     }
-
-  }
-
-alert("result is: " + sum );
-
-}
-
+    }
+    function rese(){
+        document.getElementById("s1").value = "";
+        document.getElementById("s2").value = "";
+        document.getElementById("s3").value = "";
+        document.getElementById("s4").value = "";
+        document.getElementById("s5").value = "";
+        document.getElementById("s6").value = "";
+        document.getElementById("s7").value = "";
+        document.getElementById("s8").value = "";
+    }
 </script>
-
+<style>
+    table,th,tr,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    body{
+        background-image: url(https://i.stack.imgur.com/1Tzky.png);
+        background-size: cover;
+        margin-left: 20px;
+    }
+    button{
+        background-color:lightgoldenrodyellow;
+        height: 40px;
+        border-radius: 5px;
+        padding: 5px;
+        font-weight: bold;
+    }
+    p,label{
+        font-weight: bold;
+    }
+    button:hover{
+        font-size: 15px;
+        background: lightgreen;
+        border-radius: 5px;
+        padding: 5px;
+        font-weight: bold;
+    }
+</style>
 <body>
-
-
-<input type="button" onclick="doTheJob()" value="click">
-
+    <div style="width: 74%;">
+    <label style="font-size: 20px;">Enter the binary value with space after each bit</label><br>
+    <input type="text" id="binary" style="width: 1000px;" >
+    <p style="font-size: 20px;">Select the table button after entering the input</p>
+    <button onclick="initialpermutaion()">Initial Permutation(IP)</button>
+    <button onclick="inversepermutation()">Inverse Permutation(IP<sup>-1</sup>)</button>
+    <button onclick="expansionpermutation()">Expansion Permutation(E)</button>
+    <button onclick="permutationfunction()">Permutation Function(P)</button>
+    <button onclick="permutedchoiceone()">Permuted Choice One(PC-1)</button>
+    <button onclick="permutedchoicetwo()">Permuted Choice One(PC-2)</button>
+    <p id="dis"></p>
+    <h4 style="font-size: 20px;">To calculate the S-Boxes, give the input in binary of 6 bits in each box seperated by space.</h4>
+    <div style="display: inline-flex;">
+    <div/div style="margin-left: 80px;">
+    <label>S1</label>
+    <input type="text" id="s1" style="width: 100px;"><br><br>
+    <label>S2</label>
+    <input type="text" id="s2" style="width: 100px;"><br><br>
+    <label>S3</label>
+    <input type="text" id="s3" style="width: 100px;"><br><br>
+    <label>S4</label>
+    <input type="text" id="s4" style="width: 100px;"><br><br>
+    <label>S5</label>
+    <input type="text" id="s5" style="width: 100px;"><br><br>
+    <label>S6</label>
+    <input type="text" id="s6" style="width: 100px;"><br><br>
+    <label>S7</label>
+    <input type="text" id="s7" style="width: 100px;"><br><br>
+    <label>S8</label>
+    <input type="text" id="s8" style="width: 100px;"><br><br>
+    <button onclick="sbox()" style="margin-left: -30px;">Calculate S-Boxes</button>
+    <button onclick="rese()" >Clear</button>
+    </div>
+        <table style="margin-left: 250px;" >
+            <tr>
+                <th>Decimal values</th>
+                <th>Binary values</th>
+                <th>Hexadecimal Values</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0000</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0001</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>0010</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>0011</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>0100</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>0101</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>0110</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>0111</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>1000</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>1001</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>1010</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>1011</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>1100</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>1101</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>1110</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>1111</td>
+                <td>F</td>
+            </tr>
+        </table>
+    </div>
+    <p id="dis1"></p>
+</div>
+    
 </body>
-
-</html>
